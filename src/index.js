@@ -7,7 +7,7 @@ import { ApolloProvider } from "react-apollo";
 import { ApolloClient } from "apollo-client";
 import { createHttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { setContext } from "apollo-link-context";
 import { AUTH_TOKEN } from "./constants";
 import { split } from "apollo-link";
@@ -53,11 +53,11 @@ const client = new ApolloClient({
 });
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <ApolloProvider client={client}>
       <App />
     </ApolloProvider>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById("root")
 );
 serviceWorker.unregister();
